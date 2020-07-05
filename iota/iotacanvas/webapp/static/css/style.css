@@ -1,0 +1,162 @@
+body {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+    float: right;
+    position: absolute;
+}
+
+.label, label {
+    font-weight: bold;
+}
+
+.full-width {
+    display: block;
+    width: 100%;
+}
+
+form {
+    margin-top: 1em;
+}
+
+form p {
+    margin-bottom: 1em;
+}
+
+form label {
+    margin-right: 1em;
+}
+
+select {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #f1f1f1;
+}
+input[type=text],input[type=number] {
+    border: none;
+    border-bottom: 1px solid #555;
+}
+input[type=button], input[type=submit], input[type=reset] {
+    background-color: #999;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+    min-width: 10em;
+}
+
+#refresh_rate_input {
+    margin-right: 1em;
+}
+
+.gpios input, #refresh_rate_input {
+    width: 3em;
+    text-align: center;
+}
+
+.gpios label {
+    display: inline-block;
+    width: 5.8em;
+    vertical-align: -5%;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin-top: -0.7em;
+}
+
+input.switch {
+    position: relative;
+    top: 0.6em;
+    margin-left: 0.8em;
+    -webkit-appearance: none; outline: none;
+    width: 3.2em; height: 1.5em;
+    background-color: #ffffff; border: 1px solid #D9DADC;
+    border-radius: 1em;
+    transition-duration: 200ms;
+}
+input.switch:after {
+    content: "";
+    position: absolute;
+    top: -1px; left: 1px;
+    width: 1.5em; height: 1.5em;
+    background-color: transparent;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.3);
+}
+input.switch:checked {
+    border-color: rgb(173, 173, 173);
+    box-shadow: inset 20px 0 0 0 rgb(138, 138, 138);
+}
+input.switch:checked:after {
+    left: 20px;
+    box-shadow: -2px 4px 3px rgba(0,0,0,0.05);
+}
+
+.IOTA {
+    text-align: left;
+}
+
+#addr {
+    overflow-wrap: break-word;
+}
+
+#qr {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 500px) {
+    .IOTA {
+       width: 100%;
+    }
+}
+
+/* Style the tab */
+nav a:link, nav a:visited {
+    text-decoration: none;
+    color: black;
+    text-align: center;
+}
+
+.tab {
+    display: flex;
+    justify-content: space-evenly;
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+}
+  
+  /* Style the buttons that are used to open the tab content */
+.tab a {
+    flex: 1;
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+}
+  
+  /* Change background color of buttons on hover */
+.tab a:hover {
+    background-color: #ddd;
+}
+
+.tab .selected {
+    background-color: #ccc;
+}

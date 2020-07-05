@@ -1,0 +1,12 @@
+*.pyc
+__pycache__/
+
+dist/
+build/
+*.egg-info/
+
+.vscode/*
+
+iotacanvas/webapp/static/images/*_qr.jpg
+settings.conf
+Pipfile.lock

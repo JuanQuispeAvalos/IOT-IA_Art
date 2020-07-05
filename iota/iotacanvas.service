@@ -1,0 +1,12 @@
+[Unit]
+Description=IOTA Canvas
+After=network.target
+
+[Service]
+Type=simple
+User=root
+WorkingDirectory=/usr/bin/iota-canvas
+ExecStart=/usr/local/bin/pipenv run python iotacanvas/main.py
+
+[Install]
+WantedBy=multi-user.target
