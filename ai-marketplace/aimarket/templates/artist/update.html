@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}Edit {{ ai['ai_name'] }}{% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<form method="post">
+    <label for="title">Name</label>
+    <input name="ai_name" id="ai_name" value="{{ request.form['ai_name'] or ai['ai_name'] }}" required>
+    <label for="surcharge">Surcharge (IOTA)</label>
+    <input type="number" name="surcharge" value="{{ request.form['surcharge'] or ai['surcharge'] }}">
+    <label for="genre">Genre</label>
+    <select name="genre" class="selectpicker">
+        {% set selected_id = request.form['genre'] or ai['genre_id'] %}
+        {% for genre in genres %}
+        <option value="{{ genre.id }}" {% if genre.id == selected_id|int %} selected {% endif %}>
+            {{ genre.genre_name }}
+        </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Save">
+</form>
+<hr>
+<form action="{{ url_for('artist.delete', aiid=ai['id']) }}" method="post">
+    <input class="danger" type="submit" value="Delete" onclick="return confirm('Are you sure?');">
+</form>
+{% endblock %}

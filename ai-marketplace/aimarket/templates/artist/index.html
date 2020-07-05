@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block header %}
+<h1>{% block title %}AIs{% endblock %}</h1>
+{% if g.user %}
+<a class="action" href="{{ url_for('artist.create') }}">Upload</a>
+{% endif %}
+{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <th>AI Name</th>
+        <th>Surcharge</th>
+        <th>Genre</th>
+        <th>Run Time (s)</th>
+        <th>Action</th>
+    </thead>
+    <tbody>
+        {% for ai in ais %}
+        <tr class="artist">
+            <td>{{ ai['ai_name'] }}</td>
+            <td>{{ ai['surcharge'] }}</td>
+            <td>{{ ai['genre_name'] }}</td>
+            <td>{{ ai['average_time'] or 'unknown'}}</td>
+            <td><a class="action" href="{{ url_for('artist.update', aiid=ai['id']) }}">Edit</a></td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
